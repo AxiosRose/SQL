@@ -1,0 +1,22 @@
+Create table  Comic_books (id Integer Primary Key, name text, release_year Integer, cost Integer, sale_price Integer, condition text);
+
+Insert into Comic_books Values(1,"Spiderman",1965,150,640,"Mint");
+Insert into Comic_books Values(2,"Hulk",1970,80,450,"Mint");
+Insert into Comic_books Values(3,"Iron_man",1960,210,850,"Mint");
+Insert into Comic_books Values(4,"Thor",1964,500,650,"Mint");
+Insert into Comic_books Values(5,"Batman",1951,100,850,"Mint");
+Insert into Comic_books Values(6,"Joker",1985,70,250,"Mint");
+Insert into Comic_books Values(7,"Superman",1946,900,2500,"Mint");
+Insert into Comic_books Values(8,"Captain_America",1952,140,500,"Mint");
+Insert into Comic_books Values(9,"Black_Panther",1982,40,150,"Mint");
+Insert into Comic_books Values(10,"Vision",1990,60,250,"Mint");
+Insert into Comic_books Values(11,"Riddler",1971,10,50,"Mint");
+Insert into Comic_books Values(12,"Moonknight",1990,100,300,"Mint");
+Insert into Comic_books Values(13,"Uncharted",1992,30,40,"Mint");
+Insert into Comic_books Values(14,"Green_Lantern",1973,100,520,"Mint");
+Insert into Comic_books Values(15,"Doctor_Strange",1983,100,300,"Mint");
+
+Select * From Comic_books
+Where release_year <=2000
+order by sale_price asc;
+
