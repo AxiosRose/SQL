@@ -1,22 +1,37 @@
-Create table  Comic_books (id Integer Primary Key, name text, release_year Integer, cost Integer, sale_price Integer, condition text);
+-- Create a store database
 
-Insert into Comic_books Values(1,"Spiderman",1965,150,640,"Mint");
-Insert into Comic_books Values(2,"Hulk",1970,80,450,"Mint");
-Insert into Comic_books Values(3,"Iron_man",1960,210,850,"Mint");
-Insert into Comic_books Values(4,"Thor",1964,500,650,"Mint");
-Insert into Comic_books Values(5,"Batman",1951,100,850,"Mint");
-Insert into Comic_books Values(6,"Joker",1985,70,250,"Mint");
-Insert into Comic_books Values(7,"Superman",1946,900,2500,"Mint");
-Insert into Comic_books Values(8,"Captain_America",1952,140,500,"Mint");
-Insert into Comic_books Values(9,"Black_Panther",1982,40,150,"Mint");
-Insert into Comic_books Values(10,"Vision",1990,60,250,"Mint");
-Insert into Comic_books Values(11,"Riddler",1971,10,50,"Mint");
-Insert into Comic_books Values(12,"Moonknight",1990,100,300,"Mint");
-Insert into Comic_books Values(13,"Uncharted",1992,30,40,"Mint");
-Insert into Comic_books Values(14,"Green_Lantern",1973,100,520,"Mint");
-Insert into Comic_books Values(15,"Doctor_Strange",1983,100,300,"Mint");
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
+You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
 
-Select * From Comic_books
-Where release_year <=2000
-order by sale_price asc;
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, department TEXT, aisle INTEGER, price INTEGER, units_sold INTEGER);
 
+INSERT INTO inventory VALUES
+(1, "Frying Pan", "Housewares", 3, 12.99, 12),
+(2, "Pasta Pot", "Housewares", 3, 15.99, 15),
+(3, "Running Shoes", "Shoes", 7, 49.99, 10),
+(4, "Hiking Boots", "Shoes", 7, 65.99, 5),
+(5, "Trail Running Shoes", "Shoes", 7, 55.99, 9),
+(6, "Men's Shirt", "Men's Clothing", 12, 19.99, 24),
+(7, "Men's Shorts", "Men's Clothing", 12, 24.99, 13),
+(8, "Women's Shirt", "Women's Clothing", 14, 19.99, 15),
+(9, "Women's Shorts", "Women's Clothing", 14, 24.99, 20),
+(10, "Fishing Pole", "Sporting Goods", 5, 65.99, 11),
+(11, "Ammunition", "Sporting Goods", 7, 19.99, 35),
+(12, "Tent", "Outdoors", 8, 75.99, 18),
+(13, "Sleeping Bag", "Outdoors", 9, 39.99, 36),
+(14, "First Aid Kit", "Outdoors", 10, 24.99, 21),
+(15, "Pool Floatie", "Outdoors", 11, 15.99, 10);
+
+--display the database ordered by aisle.
+SELECT * FROM inventory 
+ORDER BY aisle;
+
+--what is the maximum number of units sold by name?
+SELECT name, MAX(units_sold) 
+FROM inventory 
+GROUP BY name;
+
+--what is the average price of an item?
+SELECT AVG(price) 
+FROM inventory;
